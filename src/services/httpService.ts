@@ -1,12 +1,8 @@
-const BASE_URL = 'https://api.themoviedb.org/3';
-const API_KEY = 'fdfce9f96455d8a9aa8da878b612c4c4';
-const LANG = 'en-US';
+import { HomeListItems } from '../interfaces';
 
-interface HomeListItems {
-  slug: string;
-  title: string;
-  items: (endpoint: string) => void;
-}
+const BASE_URL = 'https://api.themoviedb.org/3';
+const API_KEY = null;
+const LANG = 'en-US';
 
 const fetchItems = async (endpoint: string) => {
   const request = await fetch(`${BASE_URL}${endpoint}`);
@@ -19,7 +15,7 @@ export default {
     return [
       {
         slug: 'Originals',
-        title: 'Originals do Netflix',
+        title: 'Netflix Originals',
         items: await fetchItems(
           `/discover/tv?with_network=213&language=${LANG}&api_key=${API_KEY}`,
         ),

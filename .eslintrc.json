@@ -21,20 +21,16 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "quotes" : [
+    "quotes": [
       "error",
       "single",
       {
         "avoidEscape": true
       }
     ],
-    "@typescript-eslint/quotes" : [
+    "@typescript-eslint/quotes": [
       "error",
       "single",
       {
@@ -49,8 +45,11 @@
     ],
     "global-require": "off",
     "react/function-component-definition": ["off"],
+    "react/no-array-index-key": ["off"],
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-explicit-any": ["warn"],
     "no-shadow": "off"
   }
 }
