@@ -1,6 +1,11 @@
 import React from 'react';
-import { MovieRowProps } from '../interfaces';
+import { Item } from '../interfaces';
 import './MovieRow.css';
+
+interface MovieRowProps {
+  title: string;
+  rowItems: Item;
+}
 
 const MovieRow: React.FC<MovieRowProps> = ({ title, rowItems }) => {
   return (

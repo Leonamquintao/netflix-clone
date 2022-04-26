@@ -23,16 +23,11 @@ export interface HomeListItems {
   title: string;
   items: Item;
 }
-
-export interface MovieRowProps {
-  title: string;
-  rowItems: Item;
-}
 export interface MovieDetails {
   movieId: number;
   type: string;
 }
-interface Genres {
+export interface Genres {
   id: number;
   name: string;
 }
@@ -55,7 +50,7 @@ export interface FeaturedMovieDetails {
   last_air_date: string;
   name: string;
   number_of_episodes: number;
-  number_of_seasons: number;
+  number_of_seasons?: number;
   origin_country: string[];
   original_language: string;
   original_name: string;
