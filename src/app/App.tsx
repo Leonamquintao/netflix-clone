@@ -1,24 +1,34 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import httpService from '../services/httpService';
-import { FeaturedMovieItem, HomeListItems } from '../interfaces';
+import { FeaturedMovieDetails, HomeListItems } from '../interfaces';
 import MovieRow from '../components/MovieRow';
 import FeaturedMovie from '../components/FeaturedMovie';
 
 const App: React.FC = () => {
   const [movieList, setMovieList] = useState<HomeListItems[]>([]);
-  const [featuredData, setFeaturedData] = useState<FeaturedMovieItem>();
+  const [featuredData, setFeaturedData] = useState<FeaturedMovieDetails>();
+
+  const getFeaturedInfo = async (list: HomeListItems[]) => {
+    const originals = list.filter((i) => i.slug === 'Originals');
+
+    const randomChoice = Math.floor(
+      Math.random() * (originals[0].items.results.length - 1),
+    );
+
+    const chosen = originals[0].items.results[randomChoice];
+    const chosenFeatured = await httpService.getMovieDetails({
+      movieId: chosen.id,
+      type: 'tv',
+    });
+    setFeaturedData(chosenFeatured);
+  };
 
   useEffect(() => {
     const loadHomeList = async () => {
       const list = await httpService.getHomeList();
       setMovieList(list);
-      const originals = list.filter((i) => i.slug === 'Originals');
-      const randomChoice = Math.floor(
-        Math.random() * (originals[0].items.results.length - 1),
-      );
-      const chosen = originals[0].items.results[randomChoice];
-      setFeaturedData(chosen);
+      getFeaturedInfo(list);
     };
     loadHomeList();
   }, []);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { FeaturedMovieItem } from '../interfaces';
+import { FeaturedMovieDetails } from '../interfaces';
 import './FeaturedMovie.css';
 
 interface FeaturedMovieProps {
-  data: FeaturedMovieItem;
+  data: FeaturedMovieDetails;
 }
 
 const FeaturedMovie: React.FC<FeaturedMovieProps> = ({ data }) => {
