@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ showHeaderGround }) => {
     <header className={showHeaderGround ? 'header' : ''}>
       <div className="header--logo">
         <a href="/">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="logo" />
         </a>
       </div>
       <div className="header--user">

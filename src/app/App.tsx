@@ -36,7 +36,7 @@ const App: React.FC = () => {
   }, []);
 
   const scrollListener = () => {
-    if (window.screenY > 10) {
+    if (window.pageYOffset > 20) {
       setShowHeader(true);
     } else {
       setShowHeader(false);
@@ -58,6 +58,10 @@ const App: React.FC = () => {
           <MovieRow key={index} title={item.title} rowItems={item.items} />
         ))}
       </section>
+
+      <footer>
+        <p>Leonflix Brasil all rights reserved ©</p>
+      </footer>
     </div>
   );
 };

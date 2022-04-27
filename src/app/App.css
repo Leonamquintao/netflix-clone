@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 body {
+  height: auto;
   background-color: #111;
   color: #fff;
   margin: 0;
@@ -10,4 +11,14 @@ body {
 }
 .main-lists {
   margin-top: -150px;
+}
+footer {
+  margin: 40px;
+  text-align: center;
+}
+
+footer p {
+  color: #999;
+  font-style: italic;
+  font-size: 12px;
 }
