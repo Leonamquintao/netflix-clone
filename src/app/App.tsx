@@ -4,10 +4,12 @@ import httpService from '../services/httpService';
 import { FeaturedMovieDetails, HomeListItems } from '../interfaces';
 import MovieRow from '../components/MovieRow';
 import FeaturedMovie from '../components/FeaturedMovie';
+import Header from '../components/Header';
 
 const App: React.FC = () => {
   const [movieList, setMovieList] = useState<HomeListItems[]>([]);
   const [featuredData, setFeaturedData] = useState<FeaturedMovieDetails>();
+  const [showHeader, setShowHeader] = useState<boolean>(false);
 
   const getFeaturedInfo = async (list: HomeListItems[]) => {
     const originals = list.filter((i) => i.slug === 'Originals');
@@ -33,8 +35,22 @@ const App: React.FC = () => {
     loadHomeList();
   }, []);
 
+  const scrollListener = () => {
+    if (window.screenY > 10) {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener);
+    return () => window.removeEventListener('scroll', scrollListener);
+  }, [showHeader]);
+
   return (
     <div className="home-page">
+      <Header showHeaderGround={showHeader} />
       {featuredData && <FeaturedMovie data={featuredData} />}
 
       <section className="main-lists">
