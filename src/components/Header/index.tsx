@@ -6,8 +6,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ showHeaderGround }) => {
-  const logo = require('../assets/logo.png');
-  const userImage = require('../assets/user-image.png');
+  const logo = require('../../assets/logo.png');
+  const userImage = require('../../assets/user-image.png');
 
   return (
     <header className={showHeaderGround ? 'header' : ''}>

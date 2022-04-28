@@ -2,9 +2,11 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import httpService from '../services/httpService';
 import { FeaturedMovieDetails, HomeListItems } from '../interfaces';
+
+// components
+import Header from '../components/Header';
 import MovieRow from '../components/MovieRow';
 import FeaturedMovie from '../components/FeaturedMovie';
-import Header from '../components/Header';
 
 const App: React.FC = () => {
   const [movieList, setMovieList] = useState<HomeListItems[]>([]);

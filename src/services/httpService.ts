@@ -19,7 +19,7 @@ export default {
     return [
       {
         slug: 'Originals',
-        title: 'Netflix Originals',
+        title: 'Leonflix Originals',
         items: await fetchItems(
           `/discover/tv?with_network=213&language=${LANG}&api_key=${REACT_APP_API_KEY}`,
         ),

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Item } from '../interfaces';
+import { Item } from '../../interfaces';
 import './MovieRow.css';
 
 interface MovieRowProps {

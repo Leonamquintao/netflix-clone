@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import React from 'react';
-import { FeaturedMovieDetails, Genres } from '../interfaces';
+import { FeaturedMovieDetails, Genres } from '../../interfaces';
 import './FeaturedMovie.css';
 
 interface FeaturedMovieProps {
