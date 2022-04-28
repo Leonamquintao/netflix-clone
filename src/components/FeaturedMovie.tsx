@@ -24,6 +24,7 @@ const FeaturedMovie: React.FC<FeaturedMovieProps> = ({ data }) => {
   const firstDate = new Date(first_air_date);
 
   const handleGenresTransformation = (_genres: Genres[]): string => {
+    if (_genres.length === 0) return 'Drama';
     const genres_string = _genres.map((value) => value.name);
     return genres_string.join(', ');
   };
