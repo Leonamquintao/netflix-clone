@@ -51,6 +51,7 @@ const App: React.FC = () => {
   return (
     <div className="home-page">
       <Header showHeaderGround={showHeader} />
+
       {featuredData && <FeaturedMovie data={featuredData} />}
 
       <section className="main-lists">
@@ -62,6 +63,15 @@ const App: React.FC = () => {
       <footer>
         <p>Leonflix Brasil all rights reserved ©</p>
       </footer>
+
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <img
+            src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif"
+            alt="loading"
+          />
+        </div>
+      )}
     </div>
   );
 };
