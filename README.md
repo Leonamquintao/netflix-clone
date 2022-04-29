@@ -13,14 +13,6 @@ as example of layout and functionalities.
 
 `npm install -- save-dev prettier eslint-config-prettier eslint-plugin-prettier`
 
-## Available Scripts
+## Demo
 
-### `npm start`
-
-### `npm test`
-
-### `npm run build`
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Alt text](public/lx_evidence.gif?raw=true 'Netflix-clone')
