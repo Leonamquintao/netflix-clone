@@ -3,7 +3,7 @@
 This is a React + Typescript app destined to study these technologies using the Netflix
 as example of layout and functionalities.
 
-### creating Linting and code style
+### Creating Linting and code style
 
 `npx create-react-app --template=typescript <name>`
 
