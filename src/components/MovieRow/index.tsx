@@ -67,10 +67,12 @@ const MovieRow: React.FC<MovieRowProps> = ({ title, rowItems }) => {
           {rowItems.results.length > 0 &&
             rowItems.results.map((item, key) => (
               <div key={key} className="movieRow--item">
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                  alt={item.original_name}
-                />
+                {item.poster_path && (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+                    alt={item.original_name}
+                  />
+                )}
               </div>
             ))}
         </div>
